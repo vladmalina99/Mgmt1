@@ -1,0 +1,39 @@
+﻿@page
+@using Mgmt1.Models
+@model Mgmt1.Pages.Admin.Rooms.IndexModel
+
+<h2 class="text-center mb-5">List of Rooms</h2>
+
+<div class="row mb-5">
+    <div class="col">
+        <a class="btn-primary" href='/Admin/Rooms/Create'>New Room</a>
+    </div>
+</div>
+
+<table class="table">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Category</th>
+        <th>Price</th>
+        <th>Image</th>
+        <th>Created at</th>
+        <th>Action</th>
+    </tr>
+
+    @foreach (var room in Model.Rooms)
+    {
+        <tr>
+            <td>@room.Id</td>
+            <td>@room.Name</td>
+            <td>@room.Category</td>
+            <td>@room.Price</td>
+            <td><img src="/rooms/@room.ImageFileName" width="100" /></td>
+            <td>@room.CreatedAt.ToString("MM/dd/yyyy")</td>
+            <td style="white-space:nowrap">
+                <a class="btn-primary btn-sm" href="Admin/Rooms/Edit?id=@room.Id">Edit</a>
+                <a class="btn-primary btn-sm" href="Admin/Rooms/Delete?id=@room.Id">Delete</a>
+            </td>
+        </tr>
+    }
+</table>
