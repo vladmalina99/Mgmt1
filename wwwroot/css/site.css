@@ -1,22 +1,56 @@
-html {
-  font-size: 14px;
+
+.navbar {
+    padding: 1rem 0;
+    background-color: #3498db; /* Folose?te culoarea dorit? */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
-@media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
+.navbar-brand {
+    color: #fff; /* Culoarea textului pentru brand */
 }
 
-.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+.navbar-nav .nav-link {
+    color: #333; /* Culoarea textului implicit */
 }
 
-html {
-  position: relative;
-  min-height: 100%;
+    .navbar-nav .nav-link:hover {
+        color: #fff; /* Culoarea textului la hover */
+    }
+
+/* Stilizare Con?inut Principal */
+main {
+    padding-top: 20px;
 }
 
-body {
-  margin-bottom: 60px;
+/* Stilizare Subsol (Footer) */
+.footer {
+    padding: 1rem 0;
+    background-color: #f8f9fa; /* Folose?te culoarea dorit? */
+    text-align: center;
 }
+
+/* Stilizare Meniu Derulant (Dropdown) */
+.dropdown-menu {
+    background-color: #fff; /* Culoarea de fundal a meniului derulant */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown-item {
+    color: #333;
+}
+
+    .dropdown-item:hover {
+        background-color: #f8f9fa; /* Culoarea de fundal la hover */
+    }
+
+/* Stilizare Butoane */
+.btn {
+    background-color: #3498db;
+    color: #fff;
+}
+
+    .btn:hover {
+        background-color: #2980b9;
+    }

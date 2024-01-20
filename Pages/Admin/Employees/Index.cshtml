@@ -1,0 +1,43 @@
+﻿@page
+@model Mgmt1.Pages.Admin.Employees.IndexModel
+@{
+}
+<h2 class="text-center mb-5">List of Employees</h2>
+
+<div class="row mb-5">
+    <div class="col">
+        <a class="btn-primary" href='/Admin/Employees/Create'>New Employee</a>
+    </div>
+</div>
+
+<table class="table">
+    <tr>
+        <th>ID</th>
+        <th>FirstName</th>
+        <th>LastName</th>
+        <th>Position</th>
+        <th>PhoneNumber</th>
+        <th>Email</th>
+        <th>Image</th>
+        <th>HireDate</th>
+        <th>Action</th>
+    </tr>
+
+    @foreach (var employee in Model.Employees)
+    {
+        <tr>
+            <td>@employee.Id</td>
+            <td>@employee.FirstName</td>
+            <td>@employee.LastName</td>
+            <td>@employee.Position</td>
+            <td>@employee.PhoneNumber</td>
+            <td>@employee.Email</td>
+            <td><img src="/employees/@employee.ImageFileName" width="100" /></td>
+            <td>@employee.HireDate.ToString("MM/dd/yyyy")</td>
+            <td style="white-space:nowrap">
+                <a class="btn-primary btn-sm" href="/Admin/Employees/Edit?id=@employee.Id">Edit</a>
+                <a class="btn-primary btn-sm" href="/Admin/Employees/Delete?id=@employee.Id">Delete</a>
+            </td>
+        </tr>
+    }
+</table>

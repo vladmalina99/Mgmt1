@@ -1,0 +1,41 @@
+﻿@page
+@model Mgmt1.Pages.Admin.Guests.IndexModel
+@{
+}
+<h2 class="text-center mb-5">List of Guests</h2>
+
+<div class="row mb-5">
+    <div class="col">
+        <a class="btn-primary" href='/Admin/Guests/Create'>New Guest</a>
+    </div>
+</div>
+
+<table class="table">
+    <tr>
+        <th>ID</th>
+        <th>FirstName</th>
+        <th>LastName</th>
+        <th>PhoneNumber</th>
+        <th>Email</th>
+        <th>CheckInDate</th>
+        <th>CheckOutDate</th>
+        <th>Action</th>
+    </tr>
+
+    @foreach (var guest in Model.Guests)
+    {
+        <tr>
+            <td>@guest.Id</td>
+            <td>@guest.FirstName</td>
+            <td>@guest.LastName</td>
+            <td>@guest.PhoneNumber</td>
+            <td>@guest.Email</td>
+            <td>@guest.CheckInDate?.ToString("MM/dd/yyyy")</td>
+            <td>@guest.CheckOutDate?.ToString("MM/dd/yyyy")</td>
+            <td style="white-space:nowrap">
+                <a class="btn btn-primary" href="/Admin/Guests/Edit?id=@guest.Id">Edit</a>
+                <a class="btn btn-danger" href="/Admin/Guests/Delete?id=@guest.Id">Delete</a>
+            </td>
+        </tr>
+    }
+</table>
