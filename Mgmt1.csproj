@@ -7,6 +7,25 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Pages\Admin\NewFolder\**" />
+    <Content Remove="Pages\Admin\NewFolder\**" />
+    <EmbeddedResource Remove="Pages\Admin\NewFolder\**" />
+    <None Remove="Pages\Admin\NewFolder\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Pages\Admin\Bookings\Create.cs" />
+    <Compile Remove="Pages\Admin\Bookings\Deelete.cshtml.cs" />
+    <Compile Remove="Pages\Admin\Employees\Index1.cshtml.cs" />
+    <Compile Remove="Pages\Admin\Guests\Delete.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="Pages\Admin\Bookings\Deelete.cshtml" />
+    <Content Remove="Pages\Admin\Employees\Index1.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.1" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.1" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.1">

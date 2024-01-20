@@ -1,0 +1,32 @@
+﻿@page
+@model Mgmt1.Pages.Admin.Bookings.IndexModel
+
+<h2 class="text-center mb-5">List of Bookings</h2>
+
+<div class="row mb-5">
+    <div class="col">
+        <a class="btn-primary" href='/Admin/Bookings/Create'>New Booking</a>
+    </div>
+</div>
+
+<table class="table">
+    <tr>
+        <th>ID</th>
+        <th>Room</th>
+        <th>Reservation Date</th>
+        <th>Action</th>
+    </tr>
+
+    @foreach (var booking in Model.Bookings)
+    {
+        <tr>
+            <td>@booking.BookingId</td>
+            <td>@booking.RoomNumber</td>
+            <td>@booking.ReservationDate.ToString("MM/dd/yyyy")</td>
+            <td style="white-space:nowrap">
+                <a class="btn-primary btn-sm" href="/Admin/Bookings/Edit?id=@booking.BookingId">Edit</a>
+                <a class="btn-primary btn-sm" href="/Admin/Bookings/Delete?id=@booking.BookingId">Delete</a>
+            </td>
+        </tr>
+    }
+</table>

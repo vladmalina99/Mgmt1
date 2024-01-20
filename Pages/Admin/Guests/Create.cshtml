@@ -1,0 +1,82 @@
+﻿@page
+@model Mgmt1.Pages.Admin.Guests.CreateModel
+
+<div class="row">
+    <div class="col-m-8 mx-auto rounded border p-3">
+        <h2 class="text-center mb-5">New Guest</h2>
+
+        @if (Model.errorMessage.Length > 0)
+        {
+            <div class='alert alert-warning alert-dismissible fade show' role='alert'>
+                <strong>@Model.errorMessage</strong>
+                <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
+            </div>
+        }
+        else if (Model.errorMessage.Length > 0)
+        {
+            <div class='alert alert-success alert-dismissible fade show' role='alert'>
+                <strong>@Model.successMessage</strong>
+                <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
+            </div>
+        }
+            </div>
+            <form method="post" enctype="multipart/form-data">
+            <div class="row mb-3">
+            <div class="row mb-3">
+                <label class="col-sm-4 col-form-label">FirstName</label>
+                <div class="col-sm-8">
+                    <input class="form-control" asp-for="GuestDto.FirstName" />
+                    <span asp-validation-for="GuestDto.FirstName" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label class="col-sm-4 col-form-label">LastName</label>
+                <div class="col-sm-8">
+                    <input class="form-control" asp-for="GuestDto.LastName" />
+                    <span asp-validation-for="GuestDto.LastName" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label class="col-sm-4 col-form-label">PhoneNumber</label>
+                <div class="col-sm-8">
+                    <input class="form-control" asp-for="GuestDto.PhoneNumber" />
+                    <span asp-validation-for="GuestDto.PhoneNumber" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label class="col-sm-4 col-form-label">Email</label>
+                <div class="col-sm-8">
+                    <textarea class="form-control" asp-for="GuestDto.Email"></textarea>
+                    <span asp-validation-for="GuestDto.Email" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label class="col-sm-4 col-form-label">Check-In Date</label>
+                <div class="col-sm-8">
+                    <input class="form-control" asp-for="GuestDto.CheckInDate" />
+                    <span asp-validation-for="GuestDto.CheckInDate" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label class="col-sm-4 col-form-label">Check-Out Date</label>
+                <div class="col-sm-8">
+                    <input class="form-control" asp-for="GuestDto.CheckOutDate" />
+                    <span asp-validation-for="GuestDto.CheckOutDate" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <div class="offset-sm-4 col-sm-4 d-grid">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+                <div class="col-sm-4 d-grid">
+                    <a class="btn btn-outline-primary" href="/Admin/Guests/Index" role="button">Cancel</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
